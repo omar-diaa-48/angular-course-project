@@ -1,13 +1,21 @@
-import { Component, ViewChild } from "@angular/core";
+import { Component, ElementRef, OnChanges, OnInit, SimpleChanges, ViewChild } from "@angular/core";
 
 @Component({
     selector: 'app-custom',
     templateUrl: './custom.component.html'
 })
-export class CustomComponent {
-    @ViewChild('customInput', { static: false }) serverContentInput?: HTMLInputElement;
+export class CustomComponent implements OnInit, OnChanges {
+    @ViewChild('customInput', { static: false }) customInput?: ElementRef;
 
-    onSubmit(nameInput: HTMLInputElement) {
-        
+    onSubmit() {
+        console.log(this.customInput);
+    }
+
+    ngOnInit(): void {
+        console.log('ngOnInit called');
+    }
+
+    ngOnChanges(changes: SimpleChanges): void {
+        console.log('ngOnChanges called', changes);
     }
 }
