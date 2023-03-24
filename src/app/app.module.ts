@@ -11,6 +11,8 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { CustomComponent } from './custom/custom.component';
 import { GameControlComponent } from './custom/game-control/game-control.component';
+import { OddComponent } from './custom/odd/odd.component';
+import { EvenComponent } from './custom/even/even.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { GameControlComponent } from './custom/game-control/game-control.compone
     ShoppingListComponent,
     ShoppingEditComponent,
     CustomComponent,
-    GameControlComponent
+    GameControlComponent,
+    OddComponent,
+    EvenComponent
   ],
   imports: [
     BrowserModule

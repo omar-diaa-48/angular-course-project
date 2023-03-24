@@ -6,9 +6,20 @@ import { Component, ElementRef, OnChanges, OnInit, SimpleChanges, ViewChild } fr
 })
 export class CustomComponent implements OnInit, OnChanges {
     @ViewChild('customInput', { static: false }) customInput?: ElementRef;
+    evenNumbers: number[] = [];
+    oddNumbers: number[] = [];
 
     onSubmit() {
         console.log(this.customInput);
+    }
+
+    onIntervalFired(firedNumber: number) {
+        if (firedNumber % 2 === 0) {
+            this.evenNumbers.push(firedNumber)
+        }
+        else {
+            this.oddNumbers.push(firedNumber)
+        }
     }
 
     ngOnInit(): void {
