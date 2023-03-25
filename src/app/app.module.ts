@@ -13,6 +13,8 @@ import { CustomComponent } from './custom/custom.component';
 import { GameControlComponent } from './custom/game-control/game-control.component';
 import { OddComponent } from './custom/odd/odd.component';
 import { EvenComponent } from './custom/even/even.component';
+import { ElementBehaviorDirective } from './shared/element-behavior.directive';
+import { RenderUnlessDirective } from './shared/render-unless.directive';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { EvenComponent } from './custom/even/even.component';
     CustomComponent,
     GameControlComponent,
     OddComponent,
-    EvenComponent
+    EvenComponent,
+    ElementBehaviorDirective,
+    RenderUnlessDirective
   ],
   imports: [
     BrowserModule
