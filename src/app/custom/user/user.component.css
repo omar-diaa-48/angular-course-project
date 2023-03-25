@@ -1,0 +1,8 @@
+.user-action:hover {
+    cursor: pointer;
+}
+
+.user-action {
+    color: blue;
+    text-decoration: underline;
+}

@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { LogginService } from './logging.service';
+import { LogginService } from './services/logging.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [LogginService]
 })
 export class AppComponent {
   title = 'course-project';

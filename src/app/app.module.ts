@@ -16,6 +16,11 @@ import { EvenComponent } from './custom/even/even.component';
 import { ElementBehaviorDirective } from './shared/element-behavior.directive';
 import { RenderUnlessDirective } from './shared/render-unless.directive';
 import { DropdownDirective } from './shared/dropdown.directive';
+import { ActiveUsersComponent } from './custom/active-users/active-users.component';
+import { InactiveUsersComponent } from './custom/inactive-users/inactive-users.component';
+import { UserComponent } from './custom/user/user.component';
+import { UsersService } from './services/users.service';
+import { LogginService } from './services/logging.service';
 
 @NgModule({
   declarations: [
@@ -33,12 +38,13 @@ import { DropdownDirective } from './shared/dropdown.directive';
     EvenComponent,
     ElementBehaviorDirective,
     RenderUnlessDirective,
-    DropdownDirective
+    DropdownDirective,
+    ActiveUsersComponent,
+    InactiveUsersComponent,
+    UserComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
+  imports: [BrowserModule],
+  providers: [UsersService, LogginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
