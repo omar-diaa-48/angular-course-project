@@ -15,6 +15,7 @@ import { OddComponent } from './custom/odd/odd.component';
 import { EvenComponent } from './custom/even/even.component';
 import { ElementBehaviorDirective } from './shared/element-behavior.directive';
 import { RenderUnlessDirective } from './shared/render-unless.directive';
+import { DropdownDirective } from './shared/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { RenderUnlessDirective } from './shared/render-unless.directive';
     OddComponent,
     EvenComponent,
     ElementBehaviorDirective,
-    RenderUnlessDirective
+    RenderUnlessDirective,
+    DropdownDirective
   ],
   imports: [
     BrowserModule
