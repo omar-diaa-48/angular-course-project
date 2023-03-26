@@ -1,8 +1,10 @@
-import { Injectable } from "@angular/core";
+import { EventEmitter, Injectable } from "@angular/core";
 import { UserModel } from "../models/user.model";
 
 @Injectable()
 export class UsersService {
+    changeHappened = new EventEmitter();
+
     data: UserModel[] = [
         new UserModel(1, 'Max', true),
         new UserModel(2, 'Anna', true),
@@ -19,6 +21,6 @@ export class UsersService {
             return user;
         })
 
-        console.log(this.data);
+        this.changeHappened.emit();
     }
 }

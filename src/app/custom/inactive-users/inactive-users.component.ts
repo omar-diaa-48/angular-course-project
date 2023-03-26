@@ -10,7 +10,13 @@ import { UsersService } from 'src/app/services/users.service';
 export class InactiveUsersComponent implements OnInit {
   users: UserModel[] = [];
 
-  constructor(private userService: UsersService) { }
+  constructor(private userService: UsersService) {
+    this.userService.changeHappened.subscribe(
+      () => {
+        this.users = this.userService.data.filter((user) => !user.is_active);
+      }
+    )
+  }
 
   ngOnInit(): void {
     this.users = this.userService.data.filter((user) => !user.is_active);
