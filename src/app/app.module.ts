@@ -21,6 +21,8 @@ import { InactiveUsersComponent } from './custom/inactive-users/inactive-users.c
 import { UserComponent } from './custom/user/user.component';
 import { UsersService } from './services/users.service';
 import { LogginService } from './services/logging.service';
+import { RecipeService } from './recipes/recipe.service';
+import { ShoppingListService } from './shopping-list/shopping-list.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,7 @@ import { LogginService } from './services/logging.service';
     UserComponent,
   ],
   imports: [BrowserModule],
-  providers: [UsersService, LogginService],
+  providers: [UsersService, LogginService, RecipeService, ShoppingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
