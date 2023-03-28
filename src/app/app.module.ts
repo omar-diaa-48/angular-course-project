@@ -23,13 +23,9 @@ import { UsersService } from './services/users.service';
 import { LogginService } from './services/logging.service';
 import { RecipeService } from './recipes/recipe.service';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
-import { RouterModule, Routes } from '@angular/router';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { AppRoutingModule } from './app-routing.module';
 
-const appRoutes: Routes = [
-  { path: 'recipes/:recipeId', component: RecipesDetailComponent },
-  { path: 'recipes', component: RecipesComponent },
-  { path: 'shopping-list', component: ShoppingListComponent },
-]
 
 @NgModule({
   declarations: [
@@ -51,8 +47,9 @@ const appRoutes: Routes = [
     ActiveUsersComponent,
     InactiveUsersComponent,
     UserComponent,
+    NotFoundComponent
   ],
-  imports: [BrowserModule, RouterModule.forRoot(appRoutes)],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [UsersService, LogginService, RecipeService, ShoppingListService],
   bootstrap: [AppComponent]
 })
