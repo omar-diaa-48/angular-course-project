@@ -23,6 +23,12 @@ import { UsersService } from './services/users.service';
 import { LogginService } from './services/logging.service';
 import { RecipeService } from './recipes/recipe.service';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes = [
+  { path: 'recipes', component: RecipesComponent },
+  { path: 'shopping-list', component: ShoppingListComponent },
+]
 
 @NgModule({
   declarations: [
@@ -45,7 +51,7 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
     InactiveUsersComponent,
     UserComponent,
   ],
-  imports: [BrowserModule],
+  imports: [BrowserModule, RouterModule.forRoot(appRoutes)],
   providers: [UsersService, LogginService, RecipeService, ShoppingListService],
   bootstrap: [AppComponent]
 })
