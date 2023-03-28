@@ -27,7 +27,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth-guard.service';
-
+import { RecipeResolver } from './resolvers/recipe.resolver';
+import { LoaderComponent } from './shared/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -49,10 +50,11 @@ import { AuthGuard } from './auth-guard.service';
     ActiveUsersComponent,
     InactiveUsersComponent,
     UserComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LoaderComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
-  providers: [UsersService, LogginService, RecipeService, ShoppingListService, AuthService, AuthGuard],
+  providers: [UsersService, LogginService, RecipeService, ShoppingListService, AuthService, AuthGuard, RecipeResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

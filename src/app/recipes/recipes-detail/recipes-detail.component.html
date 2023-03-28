@@ -1,36 +1,39 @@
-<div *ngIf="!allowView; else recipeView">You cant edit this</div>
-<ng-template #recipeView>
-    <div class="row">
-        <div class="col-xs-12">
-            <img src="{{recipe.imagePath}}" alt="" class="img-responsive">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12">
-            <h1>{{recipe.name}}</h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12">
-            <div appDropdown class="btn-group">
-                <button type="button" class="btn btn-primary dropdown-toggle">Mange Recipe <span
-                        class="caret"></span></button>
-                <ul class="dropdown-menu">
-                    <li><a href="#">To shopping list</a></li>
-                    <li><a href="#">Edit recipe</a></li>
-                    <li><a href="#">Delete recipe</a></li>
-                </ul>
+<app-loader *ngIf="!isLoadingFinished; else loadingFinished"></app-loader>
+<ng-template #loadingFinished>
+    <div *ngIf="!isAllowView; else recipeView">You cant edit this</div>
+    <ng-template #recipeView>
+        <div class="row">
+            <div class="col-xs-12">
+                <img src="{{recipe.imagePath}}" alt="" class="img-responsive">
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12">
-            {{recipe.description}}
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>{{recipe.name}}</h1>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12">
-            Ingredients
+        <div class="row">
+            <div class="col-xs-12">
+                <div appDropdown class="btn-group">
+                    <button type="button" class="btn btn-primary dropdown-toggle">Mange Recipe <span
+                            class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">To shopping list</a></li>
+                        <li><a href="#">Edit recipe</a></li>
+                        <li><a href="#">Delete recipe</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </div>
+        <div class="row">
+            <div class="col-xs-12">
+                {{recipe.description}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                Ingredients
+            </div>
+        </div>
+    </ng-template>
 </ng-template>
