@@ -1,12 +1,13 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { AuthGuard } from "./auth-guard.service";
 import { NotFoundComponent } from "./not-found/not-found.component";
 import { RecipesDetailComponent } from "./recipes/recipes-detail/recipes-detail.component";
 import { RecipesComponent } from "./recipes/recipes.component";
 import { ShoppingListComponent } from "./shopping-list/shopping-list.component";
 
 const appRoutes: Routes = [
-    { path: 'recipes/:recipeId', component: RecipesDetailComponent },
+    { path: 'recipes/:recipeId', canActivate: [AuthGuard], component: RecipesDetailComponent },
     { path: 'recipes', component: RecipesComponent },
     { path: 'shopping-list', component: ShoppingListComponent },
     { path: '**', component: NotFoundComponent },

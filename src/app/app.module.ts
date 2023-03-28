@@ -25,6 +25,8 @@ import { RecipeService } from './recipes/recipe.service';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AuthService } from './auth.service';
+import { AuthGuard } from './auth-guard.service';
 
 
 @NgModule({
@@ -50,7 +52,7 @@ import { AppRoutingModule } from './app-routing.module';
     NotFoundComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
-  providers: [UsersService, LogginService, RecipeService, ShoppingListService],
+  providers: [UsersService, LogginService, RecipeService, ShoppingListService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
