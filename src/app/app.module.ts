@@ -26,6 +26,7 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RouterModule, Routes } from '@angular/router';
 
 const appRoutes: Routes = [
+  { path: 'recipes/:recipeId', component: RecipesDetailComponent },
   { path: 'recipes', component: RecipesComponent },
   { path: 'shopping-list', component: ShoppingListComponent },
 ]
