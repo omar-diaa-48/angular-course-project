@@ -11,7 +11,10 @@ import { RecipeService } from '../recipe.service';
 })
 export class RecipesDetailComponent implements OnInit, OnDestroy {
   recipe: Recipe = new Recipe();
+  allowView: boolean = false;
+
   paramsSubscription: Subscription = new Subscription();
+  queryParamsSubscription: Subscription = new Subscription();
 
   constructor(private router: Router, private route: ActivatedRoute, private recipeService: RecipeService) { }
 
@@ -25,9 +28,16 @@ export class RecipesDetailComponent implements OnInit, OnDestroy {
         }
       }
     )
+
+    this.queryParamsSubscription = this.route.queryParams.subscribe(
+      (params: Params) => {
+        this.allowView = params['allow-view'] == '1';
+      }
+    )
   }
 
   ngOnDestroy(): void {
     this.paramsSubscription.unsubscribe();
+    this.queryParamsSubscription.unsubscribe();
   }
 }

@@ -15,6 +15,6 @@ export class RecipesItemComponent {
 
   onSelected() {
     // this.recipeService.recipeSelected.emit(this.recipe);
-    this.router.navigate([`recipes/${this.recipe.id}`])
+    this.router.navigate(['/recipes', this.recipe.id], { queryParams: { "allow-view": this.recipe.id === 1 ? '1' : '0' } })
   }
 }
