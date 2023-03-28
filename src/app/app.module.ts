@@ -54,7 +54,7 @@ import { LoaderComponent } from './shared/loader/loader.component';
     LoaderComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
-  providers: [UsersService, LogginService, RecipeService, ShoppingListService, AuthService, AuthGuard, RecipeResolver],
+  providers: [UsersService, LogginService, RecipeService, ShoppingListService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
