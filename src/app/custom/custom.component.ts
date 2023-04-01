@@ -10,8 +10,10 @@ export class CustomComponent implements OnInit, OnChanges {
     evenNumbers: number[] = [];
     oddNumbers: number[] = [];
 
-    onFormSubmit(form: NgForm) {
-        console.log('Submitted', form);
+    @ViewChild('f') form?: ElementRef;
+
+    onFormSubmit() {
+        console.log('Submitted', this.form);
     }
 
     onSubmit() {
