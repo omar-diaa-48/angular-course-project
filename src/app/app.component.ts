@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { LogginService } from './services/logging.service';
 
@@ -6,6 +6,7 @@ import { LogginService } from './services/logging.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit, OnDestroy {
   title = 'course-project';
@@ -32,7 +33,7 @@ export class AppComponent implements OnInit, OnDestroy {
     })
 
     this.intervalSubscription = intervalObservable.subscribe((data) => {
-      console.log(data);
+      // console.log(data);
     })
   }
 
