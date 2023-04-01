@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnChanges, OnInit, SimpleChanges, ViewChild } from "@angular/core";
+import { Form, NgForm } from "@angular/forms";
 
 @Component({
     selector: 'app-custom',
@@ -8,6 +9,10 @@ export class CustomComponent implements OnInit, OnChanges {
     @ViewChild('customInput', { static: false }) customInput?: ElementRef;
     evenNumbers: number[] = [];
     oddNumbers: number[] = [];
+
+    onFormSubmit(form: NgForm) {
+        console.log('Submitted', form);
+    }
 
     onSubmit() {
         console.log(this.customInput);

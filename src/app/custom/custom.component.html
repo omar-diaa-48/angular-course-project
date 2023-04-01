@@ -1,6 +1,6 @@
 <div class="row">
     <h3>Custom code</h3>
-    <div class="row">
+    <!-- <div class="row">
         <input type="text" class="form-control" #customInput>
         <button (click)="onSubmit()" class="btn btn-success">Submit</button>
     </div>
@@ -17,14 +17,28 @@
             <app-odd *ngFor="let oddNumber of oddNumbers" [number]="oddNumber"></app-odd>
             <app-even *ngFor="let evenNumber of evenNumbers" [number]="evenNumber"></app-even>
         </div>
-    </div>
+    </div> -->
 
-    <div class="row">
+    <!-- <div class="row">
         <p appElementBehavior [defaultColor]="'yellow'">Hello</p>
-    </div>
+    </div> -->
 
-    <div class="row">
+    <!-- <div class="row">
         <app-active-users></app-active-users>
         <app-inactive-users></app-inactive-users>
-    </div>
+    </div> -->
+
+    <form (ngSubmit)="onFormSubmit(f)" #f="ngForm">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input id="username" type="text" class="form-control" name="username" ngModel>
+        </div>
+
+        <div class="form-group">
+            <label for="secret">Secret</label>
+            <input id="secret" type="password" class="form-control" name="secret" ngModel>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
 </div>

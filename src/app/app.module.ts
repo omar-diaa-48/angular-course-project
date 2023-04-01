@@ -29,6 +29,7 @@ import { AuthService } from './auth.service';
 import { AuthGuard } from './auth-guard.service';
 import { RecipeResolver } from './resolvers/recipe.resolver';
 import { LoaderComponent } from './shared/loader/loader.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,7 @@ import { LoaderComponent } from './shared/loader/loader.component';
     NotFoundComponent,
     LoaderComponent
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [UsersService, LogginService, RecipeService, ShoppingListService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })

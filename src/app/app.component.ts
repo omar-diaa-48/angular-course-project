@@ -25,7 +25,7 @@ export class AppComponent implements OnInit, OnDestroy {
       setInterval(() => {
         observer.next(count);
         if (count > 3) {
-          observer.error(new Error('Count cant be greater that 3'))
+          observer.complete()
         }
         count++;
       }, 1000)
