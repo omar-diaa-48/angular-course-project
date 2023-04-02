@@ -1,4 +1,4 @@
-<form [formGroup]="signupForm">
+<form [formGroup]="signupForm" (submit)="onSubmit()">
     <div class="form-group">
         <label for="email">Email</label>
         <input id="email" type="text" class="form-control" formControlName="email">

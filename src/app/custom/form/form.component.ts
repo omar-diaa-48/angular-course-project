@@ -20,5 +20,7 @@ export class FormComponent implements OnInit {
     })
   }
 
-  onFormSubmit() { }
+  onSubmit() {
+    console.log(this.signupForm);
+  }
 }
