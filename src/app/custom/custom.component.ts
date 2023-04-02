@@ -10,12 +10,6 @@ export class CustomComponent implements OnInit, OnChanges {
     evenNumbers: number[] = [];
     oddNumbers: number[] = [];
 
-    @ViewChild('f') form?: HTMLFormElement;
-
-    onFormSubmit() {
-        console.log('Submitted', this.form);
-    }
-
     onSubmit() {
         console.log(this.customInput);
     }

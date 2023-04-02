@@ -1,0 +1,22 @@
+<form [formGroup]="signupForm">
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" type="text" class="form-control" formControlName="email">
+    </div>
+
+    <div class="radio" *ngFor="let gender of genders">
+        <label>
+            <input type="radio" [value]="gender" formControlName="gender" />
+            {{gender}}
+        </label>
+    </div>
+
+    <div class="form-group">
+        <label for="subscription">Subscription</label>
+        <select id="subscription" class="form-control" formControlName="subscription">
+            <option *ngFor="let subscription of subscriptions" [value]="subscription">{{subscription}}</option>
+        </select>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Submit</button>
+</form>
