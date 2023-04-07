@@ -8,6 +8,7 @@ import { Post } from '../models/post.model';
   styleUrls: ['./posts-list.component.css']
 })
 export class PostsListComponent implements OnInit {
+  isFetching: boolean = true;
   posts: Post[] = [];
 
   constructor(private postService: PostService) { }
@@ -15,6 +16,7 @@ export class PostsListComponent implements OnInit {
   ngOnInit(): void {
     this.postService.getPosts().subscribe((posts) => {
       this.posts = posts;
+      this.isFetching = false;
     })
   }
 }
