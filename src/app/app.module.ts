@@ -31,6 +31,7 @@ import { RecipeResolver } from './resolvers/recipe.resolver';
 import { LoaderComponent } from './shared/loader/loader.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormComponent } from './custom/form/form.component';
+import { ShortenPipe } from './shorten.pipe';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { FormComponent } from './custom/form/form.component';
     NotFoundComponent,
     LoaderComponent,
     FormComponent,
+    ShortenPipe,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [UsersService, LogginService, RecipeService, ShoppingListService, AuthService, AuthGuard],
