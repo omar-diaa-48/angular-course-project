@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http'
 
 import { HeaderComponent } from 'src/app/header/header.component';
 import { RecipesComponent } from './recipes/recipes.component';
@@ -32,6 +33,9 @@ import { LoaderComponent } from './shared/loader/loader.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormComponent } from './custom/form/form.component';
 import { ShortenPipe } from './shorten.pipe';
+import { PostFormComponent } from './custom/post-form/post-form.component';
+import { PostsListComponent } from './custom/posts-list/posts-list.component';
+import { PostService } from './custom/services/post.service';
 
 @NgModule({
   declarations: [
@@ -57,9 +61,11 @@ import { ShortenPipe } from './shorten.pipe';
     LoaderComponent,
     FormComponent,
     ShortenPipe,
+    PostFormComponent,
+    PostsListComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
-  providers: [UsersService, LogginService, RecipeService, ShoppingListService, AuthService, AuthGuard],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule],
+  providers: [UsersService, LogginService, RecipeService, ShoppingListService, PostService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
