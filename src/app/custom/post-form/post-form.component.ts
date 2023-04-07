@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { BE_URL } from 'src/app/shared/constants';
 
 @Component({
   selector: 'app-post-form',
@@ -18,7 +19,7 @@ export class PostFormComponent {
   }
 
   onSubmit() {
-    this.http.post('https://ng-course-86f8d-default-rtdb.europe-west1.firebasedatabase.app/posts.json', this.postForm.value)
+    this.http.post(`${BE_URL}/posts.json`, this.postForm.value)
       .subscribe((response) => {
         console.log({ response });
         this.postForm.reset();

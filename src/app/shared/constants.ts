@@ -1,0 +1,1 @@
+export const BE_URL = 'https://ng-course-86f8d-default-rtdb.europe-west1.firebasedatabase.app'
