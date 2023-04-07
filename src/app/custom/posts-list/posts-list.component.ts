@@ -11,7 +11,7 @@ import { Subject } from 'rxjs';
 export class PostsListComponent implements OnInit {
   isFetching: boolean = true;
   posts: Post[] = [];
-  error = new Subject<string>();
+  error: Subject<string>;
 
   constructor(private postService: PostService) { }
 
