@@ -6,8 +6,6 @@ import { map } from 'rxjs/operators'
 
 @Injectable()
 export class PostService {
-    postsChangedEvent = new EventEmitter();
-
     constructor(private http: HttpClient) { }
 
     posts: Post[] = [];
@@ -29,9 +27,5 @@ export class PostService {
                     return postsArray;
                 })
             )
-            .subscribe((posts) => {
-                this.posts = posts;
-                this.postsChangedEvent.emit(this.posts.slice())
-            })
     }
 }
