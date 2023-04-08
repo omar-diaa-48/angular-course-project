@@ -6,12 +6,14 @@ import { RecipesDetailComponent } from "./recipes/recipes-detail/recipes-detail.
 import { RecipesComponent } from "./recipes/recipes.component";
 import { RecipeResolver } from "./resolvers/recipe.resolver";
 import { ShoppingListComponent } from "./shopping-list/shopping-list.component";
+import { AuthenticateComponent } from "./authenticate/authenticate.component";
 
 const appRoutes: Routes = [
     { path: '', redirectTo: 'recipes', pathMatch: 'full' },
     { path: 'recipes/:recipeId', canActivate: [AuthGuard], component: RecipesDetailComponent, resolve: { recipe: RecipeResolver } },
     { path: 'recipes', component: RecipesComponent },
     { path: 'shopping-list', component: ShoppingListComponent },
+    { path: 'authenticate', component: AuthenticateComponent },
     { path: '**', component: NotFoundComponent },
 ]
 
