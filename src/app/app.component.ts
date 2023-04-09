@@ -12,6 +12,7 @@ export class AppComponent implements OnInit, OnDestroy {
   title = 'course-project';
   loadedFeature: string = 'recipe';
   intervalSubscription: Subscription = new Subscription();
+  modalMessage: string = 'Hi there';
 
   constructor(private logginService: LogginService) { }
 
@@ -39,5 +40,9 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.intervalSubscription.unsubscribe();
+  }
+
+  onCloseMessageModal() {
+    this.modalMessage = '';
   }
 }

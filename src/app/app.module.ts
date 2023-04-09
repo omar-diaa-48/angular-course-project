@@ -36,6 +36,7 @@ import { ShortenPipe } from './shorten.pipe';
 import { PostFormComponent } from './custom/post-form/post-form.component';
 import { PostsListComponent } from './custom/posts-list/posts-list.component';
 import { PostService } from './custom/services/post.service';
+import { AlertComponent } from './shared/alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { PostService } from './custom/services/post.service';
     ShortenPipe,
     PostFormComponent,
     PostsListComponent,
+    AlertComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule],
   providers: [UsersService, LogginService, RecipeService, ShoppingListService, PostService, AuthService, AuthGuard],
