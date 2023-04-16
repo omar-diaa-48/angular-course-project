@@ -37,15 +37,13 @@ import { PostFormComponent } from './custom/post-form/post-form.component';
 import { PostsListComponent } from './custom/posts-list/posts-list.component';
 import { PostService } from './custom/services/post.service';
 import { AlertComponent } from './shared/alert/alert.component';
+import { RecipeModule } from './recipes/recipe.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    RecipesComponent,
-    RecipesListComponent,
-    RecipesDetailComponent,
-    RecipesItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
     CustomComponent,
@@ -59,14 +57,12 @@ import { AlertComponent } from './shared/alert/alert.component';
     InactiveUsersComponent,
     UserComponent,
     NotFoundComponent,
-    LoaderComponent,
     FormComponent,
     ShortenPipe,
     PostFormComponent,
     PostsListComponent,
-    AlertComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule, RecipeModule, SharedModule],
   providers: [UsersService, LogginService, RecipeService, ShoppingListService, PostService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
